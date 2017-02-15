@@ -317,7 +317,7 @@ namespace RecapNedarvning.Tests
             //Act
             int afgift = bil.Registreringsafgift();
             //Assert
-            Assert.AreEqual(84525, afgift);
+            Assert.Fail();
         }
 
     }
