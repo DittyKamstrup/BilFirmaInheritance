@@ -43,11 +43,25 @@ namespace RecapNedarvning
 
             if (KøbsÅr <= 2015)
             {
-              return  beregnAfgift(pct105afgift2015);
+                if (beregnAfgift(pct105afgift2015) <= 0)
+                {
+                    throw new ArgumentException("prisen må ikke være <= 0");
+                }
+                else
+                {
+                    return beregnAfgift(pct105afgift2015);
+                }
             }
             else
             {
-               return beregnAfgift(pct105afgift2016);
+                if (beregnAfgift(pct105afgift2016) <= 0)
+                {
+                    throw new ArgumentException("prisen må ikke være <= 0");
+                }
+                else
+                {
+                    return beregnAfgift(pct105afgift2016);
+                }
             }
         }
 
