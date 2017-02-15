@@ -289,5 +289,24 @@ namespace RecapNedarvning.Tests
             Assert.AreEqual(30900, rækkeVidde);
         }
 
+
+
+        //[TestMethod()]
+        //[ExpectedException(typeof(ArgumentException))]
+        //public void RegistreringsAfgiftExceptionTest()
+        //{
+        //    Dieselbil dBil = new Dieselbil(80500, 2013, "BMW", "xx99999", 15, 85);
+
+        //    try
+        //    {
+        //        dBil.Registreringsafgift();
+        //        Assert.Fail("Excepted exception");
+        //    }
+        //    catch (ArgumentException)
+        //    {
+        //        // Expected
+        //    }
+        //}
+
     }
 }

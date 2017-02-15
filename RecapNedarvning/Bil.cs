@@ -52,6 +52,10 @@ namespace RecapNedarvning
                     return beregnAfgift(pct105afgift2015);
                 }
             }
+            else if (KøbsÅr < 2014)
+            {
+                throw new ArgumentException();
+            }
             else
             {
                 if (beregnAfgift(pct105afgift2016) <= 0)
