@@ -56,71 +56,71 @@ namespace RecapNedarvning.Tests
             Assert.AreEqual(84523, afgift);
         }
 
-        //[TestMethod()]
-        //public void beregnAfgiftDiesel_81700_Test()
-        //{
-        //    //Arrange
-        //    Dieselbil bil = new Dieselbil(81700, 2015, "BMW", "xx99999", 50, 500);
-        //    //Act
-        //    int afgift = bil.Registreringsafgift();
-        //    //Assert
-        //    Assert.AreEqual(85785, afgift);
-        //}
+        [TestMethod()]
+        public void beregnAfgiftDiesel_81700_Test()
+        {
+            //Arrange
+            Dieselbil bil = new Dieselbil(81700, 2015, "BMW", "xx99999", 50, 500);
+            //Act
+            int afgift = bil.Registreringsafgift();
+            //Assert
+            Assert.AreEqual(82660, afgift);  //85785
+        }
 
-        //[TestMethod()]
-        //public void beregnAfgiftBenzin_81700_Test()
-        //{
-        //    //Arrange
-        //    BenzinBil bil = new BenzinBil(81700, 2015, "BMW", "xx99999", 50, 500);
-        //    //Act
-        //    int afgift = bil.Registreringsafgift();
-        //    //Assert
-        //    Assert.AreEqual(85785, afgift);
-        //}
+        [TestMethod()]
+        public void beregnAfgiftBenzin_81700_Test()
+        {
+            //Arrange
+            BenzinBil bil = new BenzinBil(81700, 2015, "BMW", "xx99999", 50, 500);
+            //Act
+            int afgift = bil.Registreringsafgift();
+            //Assert
+            Assert.AreEqual(82660, afgift);  //85785
+        }
 
-        //[TestMethod()]
-        //public void beregnAfgiftDiesel_81699_Test()
-        //{
-        //    //Arrange
-        //    Dieselbil bil = new Dieselbil(81699, 2015, "BMW", "xx99999", 50, 500);
-        //    //Act
-        //    int afgift = bil.Registreringsafgift();
-        //    //Assert
-        //    Assert.AreEqual(85783, afgift);
-        //}
+        [TestMethod()]
+        public void beregnAfgiftDiesel_81699_Test()
+        {
+            //Arrange
+            Dieselbil bil = new Dieselbil(81699, 2015, "BMW", "xx99999", 50, 500);
+            //Act
+            int afgift = bil.Registreringsafgift();
+            //Assert
+            Assert.AreEqual(82658, afgift); //85783
+        }
 
-        //[TestMethod()]
-        //public void beregnAfgiftBenzin_81699_Test()
-        //{
-        //    //Arrange
-        //    BenzinBil bil = new BenzinBil(81699, 2015, "BMW", "xx99999", 50, 500);
-        //    //Act
-        //    int afgift = bil.Registreringsafgift();
-        //    //Assert
-        //    Assert.AreEqual(85783, afgift);
-        //}
+        [TestMethod()]
+        public void beregnAfgiftBenzin_81699_Test()
+        {
+            //Arrange
+            BenzinBil bil = new BenzinBil(81699, 2015, "BMW", "xx99999", 50, 500);
+            //Act
+            int afgift = bil.Registreringsafgift();
+            //Assert
+            Assert.AreEqual(82658, afgift);  //85783
+        }
 
-        //[TestMethod()]
-        //public void beregnAfgiftDiesel_81701_Test()
-        //{
-        //    //Arrange
-        //    Dieselbil bil = new Dieselbil(81701, 2015, "BMW", "xx99999", 50, 500);
-        //    //Act
-        //    int afgift = bil.Registreringsafgift();
-        //    //Assert
-        //    Assert.AreEqual(85786, afgift);
-        //}
+        [TestMethod()]
+        public void beregnAfgiftDiesel_81701_Test()
+        {
+            //Arrange
+            Dieselbil bil = new Dieselbil(81701, 2015, "BMW", "xx99999", 50, 500);
+            //Act
+            int afgift = bil.Registreringsafgift();
+            //Assert
+            Assert.AreEqual(82661, afgift);  //85786
+        }
 
-        //[TestMethod()]
-        //public void beregnAfgiftBenzin_81701_Test()
-        //{
-        //    //Arrange
-        //    BenzinBil bil = new BenzinBil(81701, 2015, "BMW", "xx99999", 50, 500);
-        //    //Act
-        //    int afgift = bil.Registreringsafgift();
-        //    //Assert
-        //    Assert.AreEqual(85786, afgift);
-        //}
+        [TestMethod()]
+        public void beregnAfgiftBenzin_81701_Test()
+        {
+            //Arrange
+            BenzinBil bil = new BenzinBil(81701, 2015, "BMW", "xx99999", 50, 500);
+            //Act
+            int afgift = bil.Registreringsafgift();
+            //Assert
+            Assert.AreEqual(82661, afgift);  //85786
+        }
 
         [TestMethod()]
         public void HalvÅrligEjerAfgiftDiesel_true_Test()
@@ -291,8 +291,8 @@ namespace RecapNedarvning.Tests
 
 
 
-        //[TestMethod()]
         //[ExpectedException(typeof(ArgumentException))]
+        //[TestMethod()]
         //public void RegistreringsAfgiftExceptionTest()
         //{
         //    Dieselbil dBil = new Dieselbil(80500, 2013, "BMW", "xx99999", 15, 85);
@@ -300,13 +300,25 @@ namespace RecapNedarvning.Tests
         //    try
         //    {
         //        dBil.Registreringsafgift();
-        //        Assert.Fail("Excepted exception");
+        //        Assert.Fail();
         //    }
         //    catch (ArgumentException)
         //    {
-        //        // Expected
+        //        Expected
         //    }
         //}
+
+        [ExpectedException(typeof(ArgumentException))]
+        [TestMethod()]
+        public void RegistreringsAfgiftExceptionTest()
+        {
+            //Arrange
+            Dieselbil bil = new Dieselbil(0, 2014, "BMW", "xx99999", 50, 500);
+            //Act
+            int afgift = bil.Registreringsafgift();
+            //Assert
+            Assert.AreEqual(84525, afgift);
+        }
 
     }
 }

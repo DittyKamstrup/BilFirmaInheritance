@@ -38,43 +38,45 @@ namespace RecapNedarvning
         /// <returns></returns>
         public virtual int Registreringsafgift()
         {
+            if (BilPrisExAfgift <= 0)
+            {
+                throw new ArgumentException("prisen må ikke være <= 0");
+            }
+
             int pct105afgift2015 = 80500;
             int pct105afgift2016 = 81700;
 
+            try
+            {
+                    if (KøbsÅr < 2014)
+                    {
+                        throw new ArgumentException();
+                    }
+                }
+            catch (ArgumentException)
+            {
+                    Console.WriteLine("Købsåret kan ikke være under 2014");
+            }
+
             if (KøbsÅr <= 2015)
             {
-                if (beregnAfgift(pct105afgift2015) <= 0)
-                {
-                    throw new ArgumentException("prisen må ikke være <= 0");
-                }
-                else
-                {
-                    return beregnAfgift(pct105afgift2015);
-                }
+                return beregnAfgift(pct105afgift2015);
             }
-            else if (KøbsÅr < 2014)
-            {
-                throw new ArgumentException();
-            }
+
             else
             {
-                if (beregnAfgift(pct105afgift2016) <= 0)
-                {
-                    throw new ArgumentException("prisen må ikke være <= 0");
-                }
-                else
-                {
-                    return beregnAfgift(pct105afgift2016);
-                }
+                return beregnAfgift(pct105afgift2016);
             }
         }
 
-        /// <summary>
-        /// beregner lav og høj afgift
-        /// </summary>
-        /// <param name="minimumafgift"> lav regafgift</param>
-        /// <param name="pris">prisen på bilen uden regafgift</param>
-        /// <returns></returns>
+
+
+            /// <summary>
+            /// beregner lav og høj afgift
+            /// </summary>
+            /// <param name="minimumafgift"> lav regafgift</param>
+            /// <param name="pris">prisen på bilen uden regafgift</param>
+            /// <returns></returns>
         public int beregnAfgift(int minimumafgift)
         {
             if (this.BilPrisExAfgift <= 0)
